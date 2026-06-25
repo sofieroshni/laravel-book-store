@@ -42,6 +42,6 @@ COPY docker/apache.conf /etc/apache2/sites-available/000-default.conf
 RUN php artisan config:cache || true
 RUN php artisan route:cache || true
 
-EXPOSE 8000
+EXPOSE 80
 
 CMD ["sh", "-c", "php artisan migrate --force && apache2-foreground"]
